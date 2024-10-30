@@ -42,6 +42,7 @@ Located in `/embed/`, providing visual representations of:
 
 ## Note
 This is a documentation-only repository focused on system architecture and capabilities.(**FOR RESEARCH | EDUCATIONAL PURPOSES**)
+ - Bookmaker names are obscured
 
 ## Key Documentation Sections
 
