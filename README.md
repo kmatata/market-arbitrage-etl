@@ -4,10 +4,10 @@
 
 linked:
 
-- ![BookieAlpha](../extract_n_load/BookieAlpha)
-- ![BookieGamma](../extract_n_load/BookieGamma)
-- ![BookieBeta](../extract_n_load/BookieBeta)
-- ![BookieDelta](../extract_n_load/BookieDelta)
+- ![BookieAlpha](./extract_n_load/BookieAlpha)
+- ![BookieGamma](./extract_n_load/BookieGamma)
+- ![BookieBeta](./extract_n_load/BookieBeta)
+- ![BookieDelta](./extract_n_load/BookieDelta)
 - ![container init](./launcher/obs_launch_ent-container)
 
 ---
