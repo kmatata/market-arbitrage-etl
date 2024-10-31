@@ -103,7 +103,7 @@ key = f"{os.getenv('PREFIX', 'lst')}-DOUBLE_CHANCE_{source_type}"
 
 ## Data Processing Flow
 
-![[BookieDelta_gen_seqFlow.png]]
+![sequence flow](BookieDelta_gen_seqFlow.png)
 
 ## Redis Operations
 
