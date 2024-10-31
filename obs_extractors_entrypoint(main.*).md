@@ -2,18 +2,15 @@
 
 ---
 
-tags:
+linked:
 
-- #obs_entrypoint
-- #obs_streamed_data
-- #obs_xtr_container
+- ![BookieAlpha](../extract_n_load/BookieAlpha)
+- ![BookieGamma](../extract_n_load/BookieGamma)
+- ![BookieBeta](../extract_n_load/BookieBeta)
+- ![BookieDelta](../extract_n_load/BookieDelta)
+- ![container init](./launcher/obs_launch_ent-container)
 
 ---
-
-links:
-
-- ![etl](../extract_n_load/BookieAlpha),![etl](../extract_n_load/BookieGamma),![etl](../extract_n_load/BookieBeta),![etl](../extract_n_load/BookieDelta)
-  ,![init](./launcher/obs_launch_ent-container)
 
 ## Overview
 

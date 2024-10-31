@@ -1,5 +1,17 @@
 # Market Arbitrage ETL System
 
+---
+
+linked:
+
+- ![BookieAlpha](../extract_n_load/BookieAlpha)
+- ![BookieGamma](../extract_n_load/BookieGamma)
+- ![BookieBeta](../extract_n_load/BookieBeta)
+- ![BookieDelta](../extract_n_load/BookieDelta)
+- ![container init](./launcher/obs_launch_ent-container)
+
+---
+
 ## System Overview
 This repository contains technical documentation for a distributed bookie data extraction and processing system. The system is designed to collect, transform, and analyze bookie data from multiple sources in real-time.
 
