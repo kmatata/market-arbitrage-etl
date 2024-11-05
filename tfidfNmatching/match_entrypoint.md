@@ -86,7 +86,7 @@ Step-by-step analysis:
 ```
 
 2. **Message Buffer Management**
-   ```python
+```python
 Structure:
 {
     date_index: {             # Day identifier (0=today, 1=tomorrow...)
