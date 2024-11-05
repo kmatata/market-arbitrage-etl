@@ -3,7 +3,7 @@ market-arbitrage-etl/
 ├── containerization/              # Container configurations
 │   └── obs_dockerfile.md
 ├── embed/
-├── extraction/                   # Source extraction documentation
+├── extract_n_load/                   # Source extraction documentation
 │   ├── BookieAlpha.md
 │   ├── BookieBeta.md
 │   ├── BookieDelta.md
@@ -12,7 +12,26 @@ market-arbitrage-etl/
 │   └── obs_launch_ent-container.md
 ├── schemas/                      # Data schema documentation
 │   └── extractor_schemas.md
-├── transformation/              # Data transformation docs
+├── tfidfNmatching
+│   ├── container
+│   │   └── tfidf_dockerfile.md
+│   ├── embed/
+│   ├── launcher
+│   │   └── launch_tfidf_container.md
+│   ├── main.md
+│   ├── match_entrypoint.md
+│   ├── tf-idf_utils
+│   │   ├── data-Struct_population.md
+│   │   ├── grouped_teams_storage.md
+│   │   ├── grouped_teams_validation.md
+│   │   ├── process_batch.md
+│   │   ├── redis_streams-cleanup.md
+│   │   ├── union-find_teams.md
+│   │   └── vectorize.md
+│   └── tokenization
+│       ├── load_tokenized_stop-words.md
+│       └── stop words and tokenization sys.md
+├── transform/              # Data transformation docs
 │   ├── BookieAlpha transformation.md
 │   ├── BookieBeta transformation.md
 │   ├── BookieDelta transformation.md
