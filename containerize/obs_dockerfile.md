@@ -60,7 +60,7 @@ Access control:
 
 ## Directory Structure
 
-![[GIT-OBSCURED_EXTRACTORS_20241030_162425/embed/docker.png]]
+![DOCKER FLOW](../embed/docker.png)
 
 ### Key Directories
 1. `/main` - Application root
