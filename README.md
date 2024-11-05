@@ -9,7 +9,7 @@ linked:
 - ![BookieBeta](./extract_n_load/BookieBeta.md)
 - ![BookieDelta](./extract_n_load/BookieDelta.md)
 - ![container init](./launcher/obs_launch_ent-container.md)
-- ![matching utility | TFIDF implentation](../tfidfNmatching/match_entrypoint.md)
+- ![matching utility | TFIDF implentation](/tfidfNmatching/match_entrypoint.md)
 
 ---
 
