@@ -5,6 +5,7 @@ tags:
   - #obs_streamed_data 
   - #obs_extractors
   - #obs_two-step_data_retrieval
+ - ![tfidf entrypoint](../tfidfNmatching/match_entrypoint.md)
 ---
 
 ## Core Architecture Overview
