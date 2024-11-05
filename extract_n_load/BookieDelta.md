@@ -6,6 +6,7 @@ tags:
   - #obs_extractors
   - #obs_two-step_data_retrieval 
   - #obs_browser_client_listeners
+ - ![tfidf entrypoint](../tfidfNmatching/match_entrypoint.md)
 ---
 
 ## Core Architecture Overview
