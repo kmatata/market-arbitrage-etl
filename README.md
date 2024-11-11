@@ -2,26 +2,83 @@
 
 ---
 
-linked:
+## Table of Contents:
 
-- ![BookieAlpha](./extract_n_load/BookieAlpha.md)
-- ![BookieGamma](./extract_n_load/BookieGamma.md)
-- ![BookieBeta](./extract_n_load/BookieBeta.md)
-- ![BookieDelta](./extract_n_load/BookieDelta.md)
-- ![container init](./launcher/obs_launch_ent-container.md)
-- ![matching utility | TFIDF implentation](/tfidfNmatching/match_entrypoint.md)
+### 1. [Containerization](/containerize/)
+
+- [extractors Docker Configuration](/containerize/obs_dockerfile.md)
+
+### 2. [Extract and Load](/extract_n_load/)
+
+- [BookieAlpha Extractor](/extract_n_load/BookieAlpha.md)
+- [BookieBeta Extractor](/extract_n_load/BookieBeta.md)
+- [BookieDelta Extractor](/extract_n_load/BookieDelta.md)
+- [BookieGamma Extractor](/extract_n_load/BookieGamma.md)
+
+#### [Data Transformation](/transform/)
+
+- [BookieAlpha Transform](/transform/BookieAlpha%20transformation.md)
+- [BookieBeta Transform](/transform/BookieBeta%20transformation.md)
+- [BookieDelta Transform](/transform/BookieDelta%20transformation.md)
+- [BookieGamma Transform](/transform/BookieGamma%20tranformation.md)
+
+#### [Utilities](/utilities/)
+
+- [Common Utilities](/utilities/obs_common%20utilities.md)
+- [Request Utilities](/utilities/obs_requests%20utility.md)
+
+### 3. [System Orchestration](/launcher/)
+
+- [Container Launch System](/launcher/obs_launch_ent-container.md)
+
+### 4. [Data Schemas](/schemas/)
+
+- [Extractor Schemas](/schemas/extractor_schemas.md)
+
+### 5. [TF-IDF & Matching](/tfidfNmatching/)
+
+#### Container
+
+- [TF-IDF Dockerfile](/tfidfNmatching/container/tfidf_dockerfile.md)
+
+#### Launcher
+
+- [TF-IDF Container Launch](/tfidfNmatching/launcher/launch_tfidf_container.md)
+
+#### Core Components
+
+- [Main System](/tfidfNmatching/main.md)
+- [Match Entrypoint](/tfidfNmatching/match_entrypoint.md)
+
+#### TF-IDF Utilities
+
+- [Data Structure Population](/tfidfNmatching/tf-idf_utils/data-Struct_population.md)
+- [Grouped Teams Storage](/tfidfNmatching/tf-idf_utils/grouped_teams_storage.md)
+- [Teams Validation](/tfidfNmatching/tf-idf_utils/grouped_teams_validation.md)
+- [Batch Processing](/tfidfNmatching/tf-idf_utils/process_batch.md)
+- [Stream Cleanup](/tfidfNmatching/tf-idf_utils/redis_streams-cleanup.md)
+- [Union-Find Teams](/tfidfNmatching/tf-idf_utils/union-find_teams.md)
+- [Vectorization](/tfidfNmatching/tf-idf_utils/vectorize.md)
+
+#### Tokenization
+
+- [Load Tokenized Stop Words](/tfidfNmatching/tokenization/load_tokenized_stop-words.md)
+- [Stop Words and Tokenization](/tfidfNmatching/tokenization/stop%20words%20and%20tokenization%20sys.md)
 
 ---
 
 ## Abstract
+
 A distributed real-time system designed to analyze and correlate sports betting markets across multiple bookmakers. The system comprises three main applications:
 
 1. **Market Data Extraction Service**
+
    - Real-time data harvesting from multiple bookmakers
    - Automated rate-limiting and request management
    - Stream-based data publication
 
 2. **Market Correlation Engine**
+
    - TF-IDF-based text analysis for team name matching
    - Time-windowed batch processing(mostly due to the architecture of application, given the market entries need to be temporarily stored; can probably be better implemented)
    - Cross-bookmaker market validation
@@ -38,11 +95,14 @@ A distributed real-time system designed to analyze and correlate sports betting 
 The development of this system was primarily driven by observing competitive market dynamics in the sports betting industry:
 
 ### Market Competition Dynamics
+
 - **Competitive Odds Positioning**
+
   - Bookmakers actively adjust odds to appear more attractive than competitors; inflation of odds on specific markets to drive customer acquisition
   - Temporary promotional odds boosts during peak betting periods
 
 - **Market Coverage Competition**
+
   - Expansion of available betting markets to differentiate from competitors
 
 - **Customer Acquisition Strategies**
@@ -50,12 +110,15 @@ The development of this system was primarily driven by observing competitive mar
   - Market-specific promotional adjustments
 
 ### Business Intelligence Needs
+
 The system addresses these dynamics by:
+
 1. **Real-time Market Monitoring**
+
    - Tracking odds changes across platforms
    - Identifying promotional patterns
 
-3. **Market Efficiency Assessment**
+2. **Market Efficiency Assessment**
    - Analyzing price discrepancies
    - Tracking market response times
    - Monitoring odds convergence patterns
@@ -63,9 +126,11 @@ The system addresses these dynamics by:
 This understanding of market dynamics and competitive behavior forms the foundation for the system's design and implementation.
 
 ## System Overview
+
 This repository contains technical documentation for a distributed bookie data extraction and processing system. The system is designed to collect, transform, and analyze bookie data from multiple sources in real-time, with advanced text matching capabilities for market reconciliation.
 
 ## Key Capabilities
+
 - Real-time data extraction from multiple bookie sources
 - Distributed processing using Redis streams
 - Advanced TF-IDF-based market matching system
@@ -78,6 +143,7 @@ This repository contains technical documentation for a distributed bookie data e
 ## Documentation Structure
 
 ### Core Components
+
 - **Data Extraction**: Integration with multiple data sources
 - **Stream Processing**: Redis-based message handling
 - **Market Matching**: TF-IDF-based text analysis system
@@ -90,7 +156,9 @@ This repository contains technical documentation for a distributed bookie data e
 - **System Orchestration**: Container and process management
 
 ### Architecture Diagrams
+
 Located in `/embed/`, providing visual representations of:
+
 - System flows and data pipelines
 - Stream processing and batch formation
 - TF-IDF matching architecture
@@ -98,6 +166,7 @@ Located in `/embed/`, providing visual representations of:
 - Deployment architecture
 
 ### Technical Documentation
+
 - Extraction processes
 - Stream processing flows
 - Match analysis pipelines
@@ -110,14 +179,17 @@ Located in `/embed/`, providing visual representations of:
 - Container management
 
 ## System Architecture
+
 it operates in three main phases:
 
 1. **Data Extraction & Streaming**
+
    - Multiple bookmaker data sources
    - Real-time extraction
    - Stream publication
 
 2. **Message Processing & Batch Formation**
+
    - Time-windowed buffering
    - Cross-bookmaker batch assembly
    - Age-based message management
@@ -131,11 +203,14 @@ it operates in three main phases:
 ![System Architecture](./embed/launcher_sysArch.png)
 
 ## Documentation Only
+
 **This repository contains only technical documentation and architectural diagrams. No source code is included.**
 
 ## Note
+
 This is a documentation-only repository focused on system architecture and capabilities.(**FOR RESEARCH | EDUCATIONAL PURPOSES**)
- - Bookmaker names are obscured
+
+- Bookmaker names are obscured
 
 ## Key Documentation Sections
 
