@@ -1,5 +1,31 @@
 # Market Arbitrage ETL System
 
+> **Note**: This documentation uses placeholder names (BookieAlpha, BookieBeta, BookieGamma, BookieDelta) to represent actual bookmakers. These names are used for research and educational purposes while maintaining competitive information privacy.
+
+## Overview
+A real-time system that monitors multiple sports betting markets to identify pricing inefficiencies and arbitrage opportunities. The system extracts odds from multiple bookmakers (represented by placeholder names), correlates identical matches across platforms using advanced text matching, and analyzes price discrepancies.
+
+## Key Features
+- **Real-time Market Monitoring**: Concurrent extraction from multiple bookmakers
+- **Intelligent Match Correlation**: TF-IDF-based text analysis for team name matching
+- **Market Analysis**: Price difference detection across bookmakers
+- **Stream Processing**: Redis-based distributed message handling
+- **Containerized Architecture**: Docker-based microservices deployment
+
+## Technology Stack
+- **Core**: Python 3.10, Redis Stack (Streams, JSON)
+- **Text Analysis**: TF-IDF vectorization, NLTK
+- **Infrastructure**: Docker, Redis Pub/Sub
+- **Processing**: Async I/O, Concurrent Processing
+- **Data Storage**: Redis JSON for structured data
+
+## Use Cases
+- Track real-time odds movements across bookmakers
+- Identify pricing discrepancies and arbitrage opportunities
+- Monitor market response times and odds convergence
+- Analyze competitive pricing patterns
+
+
 ---
 
 ## Table of Contents:
