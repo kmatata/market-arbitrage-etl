@@ -2,8 +2,37 @@
 
 > **Note**: This documentation uses placeholder names (BookieAlpha, BookieBeta, BookieGamma, BookieDelta) to represent actual bookmakers. These names are used for research and educational purposes while maintaining competitive information privacy.
 
+## The Challenge
+Sports betting markets often show pricing differences across bookmakers due to:
+- Different odds calculation models
+- Varying market response times
+- Regional betting patterns
+- Promotional odds adjustments
+
+This system solves the complex challenge of real-time market correlation and price comparison across multiple platforms.
+
+## System Flow
+```
+Raw Data → Extraction → Matching → Analysis
+   ↑          ↓           ↓          ↓
+Bookies → Normalization → Identity → Price
+                         Matching   Comparison
+```
+
 ## Overview
 A real-time system that monitors multiple sports betting markets to identify pricing inefficiencies and arbitrage opportunities. The system extracts odds from multiple bookmakers (represented by placeholder names), correlates identical matches across platforms using advanced text matching, and analyzes price discrepancies.
+
+## Scope
+✓ Real-time odds extraction
+✓ Team name correlation
+✓ Price discrepancy detection
+✓ Market movement analysis
+
+✗ Automated betting
+✗ Historical data analysis
+✗ Risk management
+✗ Stake calculation
+
 
 ## Key Features
 - **Real-time Market Monitoring**: Concurrent extraction from multiple bookmakers
@@ -18,6 +47,14 @@ A real-time system that monitors multiple sports betting markets to identify pri
 - **Infrastructure**: Docker, Redis Pub/Sub
 - **Processing**: Async I/O, Concurrent Processing
 - **Data Storage**: Redis JSON for structured data
+
+## Prerequisites
+- Docker and Docker Compose
+- Python 3.10+
+- Redis Stack 6.2+
+- Minimum 4GB RAM
+- Stable internet connection for API access
+
 
 ## Use Cases
 - Track real-time odds movements across bookmakers
@@ -125,7 +162,10 @@ Extraction → Team Matching → Market Analysis
 Redis Streams → JSON Store → Market Insights
 ```
 
-## Quick Start
+## Deployment Options
+The system supports multiple deployment configurations:
+
+### Single-Node Deployment
 ```bash
 # Start Redis Stack
 docker run -d --name redis-stack --networt xqwer-net redis/redis-stack:latest
@@ -135,6 +175,35 @@ python launcher/start_extractor_containers.py xtr live
 
 # Launch matching engine
 python tfidfNmatching/launcher/launch_tfidf_container.py
+```
+
+### Distributed Deployment
+- Components can be deployed across multiple servers
+- Requires appropriate network configuration
+- See deployment documentation for detailed setup
+
+### Cloud Deployment
+- Supports major cloud providers
+- Requires secure network configuration
+- Redis clustering capability
+
+## Operations & Monitoring
+### System Health Checks
+- Redis Stream health monitoring
+- Container status checks
+- Resource usage tracking
+- Rate limit monitoring
+
+### Log Management
+```bash
+# View container logs
+docker logs <container_name>
+
+# Monitor Redis Streams
+redis-cli xinfo stream <stream_name>
+
+# Check system resources
+docker stats
 ```
 
 ## Performance Considerations
